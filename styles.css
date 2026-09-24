@@ -742,7 +742,10 @@ ul { list-style: none; }
 .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.35s; opacity: 1; transform: none; }
 
 /* ── RESPONSIVE ───────────────────────────────────────────── */
+
+/* ── Tablet & large phone (≤768px) ── */
 @media (max-width: 768px) {
+  /* Nav */
   .nav-toggle {
     display: flex;
   }
@@ -753,12 +756,12 @@ ul { list-style: none; }
     left: 0;
     right: 0;
     background: rgba(10, 10, 10, 0.98);
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     flex-direction: column;
     gap: 0;
-    padding: 0.5rem 0 1rem;
+    padding: 0.5rem 0 1.25rem;
     transform: translateY(-8px);
     opacity: 0;
     pointer-events: none;
@@ -779,29 +782,49 @@ ul { list-style: none; }
 
   .nav-links a {
     display: block;
-    padding: 0.9rem 1.5rem;
+    padding: 1rem 1.5rem;
     width: 100%;
     border-bottom: 1px solid var(--border);
+    /* Larger tap target on mobile */
+    min-height: 48px;
+    display: flex;
+    align-items: center;
   }
 
   .nav-links li:last-child a {
     border: none;
     margin: 0.5rem 1.5rem 0;
     width: calc(100% - 3rem);
-    text-align: center;
+    justify-content: center;
   }
 
   .nav-cta {
     margin-top: 0.4rem;
   }
 
+  /* Hero */
   .hero-wordmark {
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
   }
 
+  .hero-tagline {
+    font-size: 0.95rem;
+  }
+
+  /* Grids — 2 columns on tablet */
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
   .footer-inner {
     flex-direction: column;
     text-align: center;
+    gap: 1.25rem;
   }
 
   .footer-brand,
@@ -811,15 +834,108 @@ ul { list-style: none; }
   }
 }
 
+/* ── Smartphones (≤480px) ── */
 @media (max-width: 480px) {
+  :root {
+    /* Tighten section spacing on small screens */
+    --section-gap: clamp(3.5rem, 8vw, 5rem);
+  }
+
+  .container {
+    width: calc(100% - 1.75rem);
+  }
+
+  /* Single-column everything */
   .cards-grid,
   .why-grid,
   .work-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Hero — tighter on small phones */
+  .hero-wordmark {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+    letter-spacing: 0.1em;
+  }
+
+  .hero-tagline {
+    font-size: 0.9rem;
+  }
+
+  .hero-mark img,
+  .hero-logo-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Buttons — full-width on phone */
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    /* Ensure 44px min tap target */
+    min-height: 48px;
+  }
+
+  /* Contact Instagram link */
+  .contact-instagram {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Cards — more breathing room */
+  .card {
+    padding: 1.4rem;
+  }
+
+  .work-info {
+    padding: 1.1rem 1.2rem 1.3rem;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  /* Footer social links — larger tap area */
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Nav height on very small screens */
+  .nav {
+    height: 60px;
+  }
+
+  .nav-links {
+    top: 60px;
+  }
+
+  .nav-wordmark {
+    font-size: 0.82rem;
+  }
+
+  /* Work cards stack full-width */
+  .work-card {
+    max-width: 100%;
+  }
+}
+
+/* ── Very small phones (≤360px) ── */
+@media (max-width: 360px) {
+  .hero-wordmark {
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+  }
+
   .container {
-    width: calc(100% - 2rem);
+    width: calc(100% - 1.25rem);
+  }
+
+  .btn {
+    font-size: 0.72rem;
+    padding: 0.9rem 1.25rem;
   }
 }
 
@@ -827,6 +943,50 @@ ul { list-style: none; }
 :focus-visible {
   outline: 1px solid var(--accent);
   outline-offset: 3px;
+}
+
+/* ── Tap target minimum (WCAG 2.5.5) ─────────────────────── */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* ── Prevent font scaling on orientation change (iOS) ────── */
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* ── Contact section Instagram link ──────────────────────── */
+.contact-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1.5rem;
+  min-height: 48px;
+  transition: color var(--dur) var(--ease),
+              border-color var(--dur) var(--ease),
+              background var(--dur) var(--ease),
+              transform var(--dur) var(--ease);
+}
+
+.contact-instagram:hover,
+.contact-instagram:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-1px);
+  outline: none;
 }
 
 /* ── Active nav link state (set by JS) ───────────────────── */
