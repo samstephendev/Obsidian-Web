@@ -636,6 +636,51 @@ ul { list-style: none; }
   width: fit-content;
 }
 
+/* Linked work card */
+.work-card--link {
+  cursor: pointer;
+  text-decoration: none;
+  display: block;  /* <a> needs block to behave like <article> */
+}
+
+.work-card--link:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Footer row inside work-info: tag left, visit label right */
+.work-info-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.work-info-footer .work-tag {
+  margin-top: 0;
+}
+
+.work-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--dur) var(--ease),
+              gap    var(--dur) var(--ease);
+  white-space: nowrap;
+}
+
+.work-card--link:hover .work-visit,
+.work-card--link:focus-visible .work-visit {
+  color: var(--accent);
+  gap: 0.5rem;
+}
+
 /* ── CONTACT ──────────────────────────────────────────────── */
 .contact {
   background: var(--bg-panel);
