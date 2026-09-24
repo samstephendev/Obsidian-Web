@@ -398,8 +398,27 @@ ul { list-style: none; }
   pointer-events: none;
 }
 
+/* ── GEOMETRIC CANVAS BACKGROUND ─────────────────────────── */
+.geo-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.services .container,
+.why .container,
+.work .container,
+.contact .container {
+  position: relative;
+  z-index: 1;
+}
+
 /* ── SERVICES ─────────────────────────────────────────────── */
 .services {
+  position: relative;
   background: var(--bg);
 }
 
@@ -534,6 +553,7 @@ ul { list-style: none; }
 
 /* ── PORTFOLIO / WORK ─────────────────────────────────────── */
 .work {
+  position: relative;
   background: var(--bg);
 }
 
@@ -621,7 +641,6 @@ ul { list-style: none; }
   background: var(--bg-panel);
   position: relative;
 }
-
 .contact::before,
 .contact::after {
   content: '';
@@ -645,6 +664,15 @@ ul { list-style: none; }
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .contact-sub {
@@ -877,8 +905,14 @@ ul { list-style: none; }
     min-height: 48px;
   }
 
-  /* Contact Instagram link */
-  .contact-instagram {
+  /* Contact links — stack vertically on phone */
+  .contact-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-instagram,
+  .contact-links .btn {
     width: 100%;
     justify-content: center;
   }
@@ -966,27 +1000,57 @@ button, [role="button"] {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  border: 1px solid var(--border-hover);
   border-radius: var(--radius-sm);
-  padding: 0.75rem 1.5rem;
   min-height: 48px;
-  transition: color var(--dur) var(--ease),
-              border-color var(--dur) var(--ease),
-              background var(--dur) var(--ease),
-              transform var(--dur) var(--ease);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--dur) var(--ease),
+              color var(--dur) var(--ease),
+              transform var(--dur) var(--ease),
+              box-shadow var(--dur) var(--ease);
+}
+
+.contact-instagram::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-soft);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.contact-instagram:hover::before,
+.contact-instagram:focus-visible::before {
+  opacity: 1;
 }
 
 .contact-instagram:hover,
 .contact-instagram:focus-visible {
-  color: var(--accent);
   border-color: var(--accent);
-  background: var(--accent-soft);
+  color: var(--white);
   transform: translateY(-1px);
+  box-shadow: 0 8px 32px rgba(139, 139, 167, 0.08);
   outline: none;
+}
+
+.contact-instagram svg {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-instagram span,
+.contact-instagram > :not(svg) {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── Active nav link state (set by JS) ───────────────────── */
