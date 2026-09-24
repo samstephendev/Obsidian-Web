@@ -199,10 +199,11 @@
 
     // Each section gets its own canvas with a slightly different pattern
     var configs = [
+      { selector: '#pricing  .geo-canvas', pattern: 'triangles' },
       { selector: '#services .geo-canvas', pattern: 'hexgrid'  },
-      { selector: '#why     .geo-canvas', pattern: 'triangles' },
-      { selector: '#work    .geo-canvas', pattern: 'hexgrid'   },
-      { selector: '#contact .geo-canvas', pattern: 'triangles' },
+      { selector: '#why      .geo-canvas', pattern: 'triangles' },
+      { selector: '#work     .geo-canvas', pattern: 'hexgrid'   },
+      { selector: '#contact  .geo-canvas', pattern: 'triangles' },
     ];
 
     configs.forEach(function (cfg) {
@@ -274,7 +275,7 @@
           angle: (Math.random() > 0.5 ? 1 : -1) * (Math.PI / 4 + (Math.random() - 0.5) * 0.3),
           speed: 0.08 + Math.random() * 0.1,
           len:   80  + Math.random() * 120,
-          alpha: 0.04 + Math.random() * 0.05,
+          alpha: 0.10 + Math.random() * 0.10,
         });
       }
     }
@@ -288,8 +289,8 @@
 
       if (pattern === 'hexgrid') {
         // Static hex grid
-        ctx.strokeStyle = 'rgba(' + R + ',' + G + ',' + B + ', 0.055)';
-        ctx.lineWidth   = 0.8;
+        ctx.strokeStyle = 'rgba(' + R + ',' + G + ',' + B + ', 0.13)';
+        ctx.lineWidth   = 1.0;
         nodes.forEach(function (n) {
           drawHex(ctx, n.bx, n.by, 38);
           ctx.stroke();
@@ -305,14 +306,14 @@
         });
 
         // Connect close node pairs
-        ctx.lineWidth = 0.5;
+        ctx.lineWidth = 0.7;
         for (var i = 0; i < nodes.length; i++) {
           for (var j = i + 1; j < nodes.length; j++) {
             var dx = nodes[i].x - nodes[j].x;
             var dy = nodes[i].y - nodes[j].y;
             var d  = Math.sqrt(dx * dx + dy * dy);
             if (d < 55) {
-              var a = (1 - d / 55) * 0.07;
+              var a = (1 - d / 55) * 0.18;
               ctx.strokeStyle = 'rgba(' + R + ',' + G + ',' + B + ',' + a + ')';
               ctx.beginPath();
               ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -326,8 +327,8 @@
         nodes.forEach(function (n) {
           var pulse = 0.3 + 0.2 * Math.sin(tick * 0.015 + n.phase);
           ctx.beginPath();
-          ctx.arc(n.x, n.y, 1.2, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(' + R + ',' + G + ',' + B + ',' + pulse * 0.5 + ')';
+          ctx.arc(n.x, n.y, 1.4, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + R + ',' + G + ',' + B + ',' + pulse * 0.9 + ')';
           ctx.fill();
         });
       }
@@ -338,8 +339,8 @@
         var cols = Math.ceil(canvas.width  / cell) + 1;
         var rows = Math.ceil(canvas.height / cell) + 1;
 
-        ctx.lineWidth   = 0.6;
-        ctx.strokeStyle = 'rgba(' + R + ',' + G + ',' + B + ', 0.045)';
+        ctx.lineWidth   = 0.9;
+        ctx.strokeStyle = 'rgba(' + R + ',' + G + ',' + B + ', 0.11)';
 
         for (var r = -1; r < rows; r++) {
           for (var c = -1; c < cols; c++) {
