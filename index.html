@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Obsidian Web — Websites and web applications, built with precision." />
+  <title>Obsidian Web</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── NAV ─────────────────────────────────────────────────────────────── -->
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#top" class="nav-logo" aria-label="Obsidian Web — back to top">
+        <img class="nav-icon" src="assets/logo.jpeg" alt="Obsidian Web logo" width="32" height="32" />
+        <span class="nav-wordmark">OBSIDIAN WEB</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─────────────────────────────────────────────────────────── -->
+    <section class="hero" id="hero" aria-label="Hero">
+      <!-- Decorative radial compass background -->
+      <div class="hero-compass" aria-hidden="true">
+        <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <!-- Concentric circles -->
+          <circle cx="300" cy="300" r="80"  stroke="#ffffff" stroke-width="0.4" fill="none" opacity="0.07"/>
+          <circle cx="300" cy="300" r="130" stroke="#ffffff" stroke-width="0.4" fill="none" opacity="0.06"/>
+          <circle cx="300" cy="300" r="185" stroke="#ffffff" stroke-width="0.4" fill="none" opacity="0.05"/>
+          <circle cx="300" cy="300" r="245" stroke="#ffffff" stroke-width="0.4" fill="none" opacity="0.04"/>
+          <circle cx="300" cy="300" r="295" stroke="#ffffff" stroke-width="0.4" fill="none" opacity="0.03"/>
+          <!-- Crosshair lines -->
+          <line x1="300" y1="5"   x2="300" y2="595" stroke="#ffffff" stroke-width="0.4" opacity="0.06"/>
+          <line x1="5"   y1="300" x2="595" y2="300" stroke="#ffffff" stroke-width="0.4" opacity="0.06"/>
+          <!-- Diagonal lines -->
+          <line x1="90"  y1="90"  x2="510" y2="510" stroke="#ffffff" stroke-width="0.3" opacity="0.04"/>
+          <line x1="510" y1="90"  x2="90"  y2="510" stroke="#ffffff" stroke-width="0.3" opacity="0.04"/>
+          <!-- Tick marks on outer ring -->
+          <g stroke="#8b8ba7" stroke-width="0.6" opacity="0.25">
+            <line x1="300" y1="5"   x2="300" y2="20" />
+            <line x1="300" y1="580" x2="300" y2="595"/>
+            <line x1="5"   y1="300" x2="20"  y2="300"/>
+            <line x1="580" y1="300" x2="595" y2="300"/>
+            <line x1="90"  y1="90"  x2="100" y2="100"/>
+            <line x1="510" y1="90"  x2="500" y2="100"/>
+            <line x1="90"  y1="510" x2="100" y2="500"/>
+            <line x1="510" y1="510" x2="500" y2="500"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="hero-content container">
+        <!-- Logo mark from assets -->
+        <div class="hero-mark">
+          <img src="assets/logo.jpeg" alt="Obsidian Web" class="hero-logo-img" />
+        </div>
+
+        <p class="hero-est">EST. 2026</p>
+        <h1 class="hero-wordmark">OBSIDIAN WEB</h1>
+        <p class="hero-tagline">Websites and web applications,<br>built with precision.</p>
+        <a href="#contact" class="btn btn-primary">Start a Project</a>
+      </div>
+    </section>
+
+    <!-- ─── SERVICES ─────────────────────────────────────────────────────── -->
+    <section class="services section" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">What We Do</p>
+          <h2 class="section-title" id="services-heading">Services</h2>
+        </div>
+
+        <div class="cards-grid" role="list">
+
+          <!-- Website Design -->
+          <article class="card" role="listitem">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8b8ba7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <circle cx="7.5" cy="6" r="0.8" fill="#8b8ba7"/>
+                <circle cx="10.5" cy="6" r="0.8" fill="#8b8ba7"/>
+                <circle cx="13.5" cy="6" r="0.8" fill="#8b8ba7"/>
+                <line x1="7" y1="14" x2="17" y2="14" stroke-width="1"/>
+                <line x1="7" y1="17" x2="13" y2="17" stroke-width="1"/>
+              </svg>
+            </div>
+            <h3 class="card-title">Website Design</h3>
+            <p class="card-desc">Bespoke, conversion-focused websites that communicate your brand with clarity. Pixel-perfect across every device.</p>
+          </article>
+
+          <!-- Web App Development -->
+          <article class="card" role="listitem">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8b8ba7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+                <line x1="12" y1="4" x2="12" y2="20" transform="rotate(-15 12 12)" opacity="0.6"/>
+              </svg>
+            </div>
+            <h3 class="card-title">Web App Development</h3>
+            <p class="card-desc">Full-stack web applications engineered for scale and reliability — from MVPs to complex platforms.</p>
+          </article>
+
+          <!-- E-commerce -->
+          <article class="card" role="listitem">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8b8ba7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <path d="M16 10a4 4 0 01-8 0"/>
+              </svg>
+            </div>
+            <h3 class="card-title">E-commerce</h3>
+            <p class="card-desc">Online stores built for growth — seamless checkout flows, inventory management, and payment integration.</p>
+          </article>
+
+          <!-- Maintenance & Support -->
+          <article class="card" role="listitem">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8b8ba7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="card-title">Maintenance &amp; Support</h3>
+            <p class="card-desc">Ongoing care plans to keep your site fast, secure, and up to date — so you can focus on your business.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHY OBSIDIAN WEB ──────────────────────────────────────────────── -->
+    <section class="why section" id="why" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Our Edge</p>
+          <h2 class="section-title" id="why-heading">Why Obsidian Web</h2>
+        </div>
+
+        <div class="why-grid" role="list">
+
+          <div class="why-item" role="listitem">
+            <div class="why-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b8ba7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3 class="why-title">Fast Turnaround</h3>
+            <p class="why-desc">Efficient workflows and clear communication mean your project ships on time, every time — no endless back-and-forth.</p>
+          </div>
+
+          <div class="why-item" role="listitem">
+            <div class="why-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b8ba7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3 class="why-title">Custom Builds Only</h3>
+            <p class="why-desc">No templates, no shortcuts. Every project is crafted from scratch to fit your specific goals and audience.</p>
+          </div>
+
+          <div class="why-item" role="listitem">
+            <div class="why-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b8ba7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3 class="why-title">Modern Stack</h3>
+            <p class="why-desc">We build with proven modern technologies — performant, accessible, and built to scale as your business grows.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PORTFOLIO ─────────────────────────────────────────────────────── -->
+    <section class="work section" id="work" aria-labelledby="work-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Selected Projects</p>
+          <h2 class="section-title" id="work-heading">Our Work</h2>
+        </div>
+
+        <div class="work-grid" role="list">
+
+          <article class="work-card" role="listitem" tabindex="0">
+            <div class="work-thumb" aria-hidden="true">
+              <!-- Geometric placeholder -->
+              <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <rect width="400" height="240" fill="#141418"/>
+                <line x1="200" y1="0" x2="200" y2="240" stroke="#8b8ba7" stroke-width="0.5" opacity="0.2"/>
+                <line x1="0" y1="120" x2="400" y2="120" stroke="#8b8ba7" stroke-width="0.5" opacity="0.2"/>
+                <circle cx="200" cy="120" r="60" stroke="#8b8ba7" stroke-width="0.8" fill="none" opacity="0.25"/>
+                <circle cx="200" cy="120" r="35" stroke="#8b8ba7" stroke-width="0.5" fill="none" opacity="0.18"/>
+                <polygon points="200,80 228,98 228,142 200,160 172,142 172,98" stroke="#8b8ba7" stroke-width="1" fill="none" opacity="0.35"/>
+                <circle cx="200" cy="120" r="5" fill="#8b8ba7" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">Project Alpha</h3>
+              <p class="work-desc">Brand website and booking platform for a premium service brand.</p>
+              <span class="work-tag">Website Design</span>
+            </div>
+          </article>
+
+          <article class="work-card" role="listitem" tabindex="0">
+            <div class="work-thumb" aria-hidden="true">
+              <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <rect width="400" height="240" fill="#141418"/>
+                <rect x="60" y="40" width="280" height="160" rx="4" stroke="#8b8ba7" stroke-width="0.8" fill="none" opacity="0.2"/>
+                <line x1="60" y1="80" x2="340" y2="80" stroke="#8b8ba7" stroke-width="0.5" opacity="0.15"/>
+                <rect x="80" y="100" width="70" height="70" rx="2" stroke="#8b8ba7" stroke-width="0.6" fill="none" opacity="0.3"/>
+                <rect x="170" y="100" width="70" height="70" rx="2" stroke="#8b8ba7" stroke-width="0.6" fill="none" opacity="0.3"/>
+                <rect x="260" y="100" width="60" height="70" rx="2" stroke="#8b8ba7" stroke-width="0.6" fill="none" opacity="0.3"/>
+                <circle cx="200" cy="120" r="4" fill="#8b8ba7" opacity="0.4"/>
+              </svg>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">Project Beta</h3>
+              <p class="work-desc">Custom e-commerce storefront with integrated inventory and analytics dashboard.</p>
+              <span class="work-tag">E-commerce</span>
+            </div>
+          </article>
+
+          <article class="work-card" role="listitem" tabindex="0">
+            <div class="work-thumb" aria-hidden="true">
+              <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <rect width="400" height="240" fill="#141418"/>
+                <polyline points="50,200 120,140 190,160 260,90 330,110 380,60" stroke="#8b8ba7" stroke-width="1.2" fill="none" opacity="0.4"/>
+                <line x1="50" y1="60" x2="50" y2="210" stroke="#8b8ba7" stroke-width="0.5" opacity="0.15"/>
+                <line x1="50" y1="210" x2="380" y2="210" stroke="#8b8ba7" stroke-width="0.5" opacity="0.15"/>
+                <circle cx="120" cy="140" r="4" fill="#8b8ba7" opacity="0.5"/>
+                <circle cx="190" cy="160" r="4" fill="#8b8ba7" opacity="0.5"/>
+                <circle cx="260" cy="90"  r="4" fill="#8b8ba7" opacity="0.5"/>
+                <circle cx="330" cy="110" r="4" fill="#8b8ba7" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">Project Gamma</h3>
+              <p class="work-desc">SaaS web application with real-time data visualisation and team collaboration tools.</p>
+              <span class="work-tag">Web App</span>
+            </div>
+          </article>
+
+          <article class="work-card" role="listitem" tabindex="0">
+            <div class="work-thumb" aria-hidden="true">
+              <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <rect width="400" height="240" fill="#141418"/>
+                <circle cx="200" cy="120" r="80" stroke="#8b8ba7" stroke-width="0.6" fill="none" opacity="0.18"/>
+                <circle cx="200" cy="120" r="55" stroke="#8b8ba7" stroke-width="0.6" fill="none" opacity="0.14"/>
+                <circle cx="200" cy="120" r="30" stroke="#8b8ba7" stroke-width="0.6" fill="none" opacity="0.1"/>
+                <line x1="120" y1="120" x2="280" y2="120" stroke="#8b8ba7" stroke-width="0.5" opacity="0.2"/>
+                <line x1="200" y1="40"  x2="200" y2="200" stroke="#8b8ba7" stroke-width="0.5" opacity="0.2"/>
+                <line x1="143" y1="63"  x2="257" y2="177" stroke="#8b8ba7" stroke-width="0.4" opacity="0.12"/>
+                <line x1="257" y1="63"  x2="143" y2="177" stroke="#8b8ba7" stroke-width="0.4" opacity="0.12"/>
+                <circle cx="200" cy="120" r="7" stroke="#8b8ba7" stroke-width="1" fill="none" opacity="0.5"/>
+                <circle cx="200" cy="120" r="2" fill="#8b8ba7" opacity="0.7"/>
+              </svg>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">Project Delta</h3>
+              <p class="work-desc">Redesign and performance overhaul of an established service business's online presence.</p>
+              <span class="work-tag">Maintenance &amp; Redesign</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ───────────────────────────────────────────────────────── -->
+    <section class="contact section" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-inner">
+        <div class="section-header">
+          <p class="section-label">Let's Build Something</p>
+          <h2 class="section-title" id="contact-heading">Get in Touch</h2>
+        </div>
+        <p class="contact-sub">Ready to start your project? Reach out — we'd love to hear what you're building.</p>
+        <a href="mailto:obsidianwebofficial@gmail.com" class="btn btn-primary">obsidianwebofficial@gmail.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <img src="assets/logo.jpeg" alt="Obsidian Web logo" class="footer-logo-img" width="22" height="22" />
+        <span>OBSIDIAN WEB</span>
+      </div>
+
+      <nav class="footer-social" aria-label="Social links">
+        <!-- Instagram -->
+        <a href="https://instagram.com/obsidianwebofficial" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Obsidian Web on Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <!-- Email -->
+        <a href="mailto:obsidianwebofficial@gmail.com" class="social-link" aria-label="Email Obsidian Web">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+      </nav>
+
+      <p class="footer-copy">&copy; 2026 Obsidian Web. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
